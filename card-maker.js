@@ -28,17 +28,17 @@ function ClozeCard(text, cloze) {
 		return
 	}
 
-  if (!(this instanceof ClozeCard)) {
+  if(!(this instanceof ClozeCard)) {
     return {
 			text:text,
 			cloze:cloze,
-			partial: text.replace(cloze, '...')
+			partial:text.replace(cloze, '...')
     };
-  }
+  };
 
   this.text = text;
   this.cloze = cloze;
-  this.partial = text.replace(cloze, '...')
+  this.partial = text.replace(cloze, '...');
 };
 
 ClozeCard.prototype.showFullText = function() {
@@ -52,8 +52,6 @@ ClozeCard.prototype.showCloze = function() {
 ClozeCard.prototype.showPartial = function() {
 	console.log(this.partial);
 };
-
-var mycloze = new ClozeCard("Abanda is the best", "tawe");
 
 exports.NormalCard = NormalCard;
 exports.ClozeCard = ClozeCard;
